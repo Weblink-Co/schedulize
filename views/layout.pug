@@ -1,0 +1,10 @@
+doctype html
+html(lang="en")
+  head
+    title #{title ? title : "Schedulize"}
+    link(rel='stylesheet', href='/styles.css')
+    block headingscripts
+  body 
+    div#app
+      block content
+    block bodyscripts
