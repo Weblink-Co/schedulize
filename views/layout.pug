@@ -2,9 +2,11 @@ doctype html
 html(lang="en")
   head
     title #{title ? title : "Schedulize"}
-    link(rel='stylesheet', href='/styles.css')
-    block headingscripts
+    link(rel="stylesheet", href="/assets/css/styles.css")
+    block heading
   body 
     div#app
       block content
-    block bodyscripts
+    script(src="https://unpkg.com/vue@3/dist/vue.global.js")
+    script(src="https://unpkg.com/vue-router@4")
+    block bottom
