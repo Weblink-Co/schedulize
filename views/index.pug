@@ -1,8 +1,10 @@
-doctype html
-html(lang='en')
-  head
-    title My First Pug Page
-  body
-    h1 Hello World
-    p This is some sample text.
-    img(src='https://via.placeholder.com/150', alt='Placeholder image')
+extends layout.pug
+
+block content
+  div.bg-red-500.p-4
+    p.text-red-400 world
+    p {{message}}
+
+
+block bottom
+  script(src="/assets/js/pages/home.page.js").
