@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  develop-db:
+  devdb:
     container_name: 'schedulize-devdb'
     image: 'postgres:latest'
     restart: always
