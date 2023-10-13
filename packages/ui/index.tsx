@@ -1,2 +1,2 @@
-// component exports
-export { Card } from "./card";
+import * as React from "react";
+
