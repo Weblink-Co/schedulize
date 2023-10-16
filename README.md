@@ -69,6 +69,12 @@ Next, you can link your Turborepo to your Remote Cache by running the following 
 npx turbo link
 ```
 
+
+## Development database
+Just run:
+`docker compose up devdb`
+Copy `.env.examaple` file to `.env` in the prisma package;
+
 ## Useful Links
 
 Learn more about the power of Turborepo:
