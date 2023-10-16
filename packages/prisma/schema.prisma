@@ -31,15 +31,15 @@ model User {
   verified      Boolean
   metadata      Json?
   accounts      Account[]
+  Session       Session[]
 
   @@unique([email])
   @@unique([email, username])
   @@index([emailVerified])
-  @@map(name: "users")
 }
 
 model Account {
-  id                Int       @id @default(autoincrement())
+  id                String    @id @default(cuid())
   userId            Int
   type              String
   provider          Providers
@@ -57,4 +57,12 @@ model Account {
   @@unique([provider, ProviderAccountId])
   @@index([userId])
   @@index([type])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  userId       Int
+  user         User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sessionToken String
+  expires      DateTime
 }
