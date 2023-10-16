@@ -15,11 +15,12 @@ enum Providers {
   EMAIL
   SMS
 }
+
 model User {
   id            Int       @id @default(autoincrement())
-  username      String?   @unique
+  username      String?
   name          String?
-  email         String    @unique
+  email         String
   emailVerified DateTime?
   bio           String?
   avatar        String?
@@ -29,6 +30,12 @@ model User {
   timeFormat    Int?
   verified      Boolean
   metadata      Json?
+  accounts      Account[]
+
+  @@unique([email])
+  @@unique([email, username])
+  @@index([emailVerified])
+  @@map(name: "users")
 }
 
 model Account {
