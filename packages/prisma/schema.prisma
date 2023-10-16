@@ -10,6 +10,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Providers {
+  GOOGLE
+  EMAIL
+  SMS
+}
 model User {
   id            Int       @id @default(autoincrement())
   username      String?   @unique
@@ -24,4 +29,25 @@ model User {
   timeFormat    Int?
   verified      Boolean
   metadata      Json?
+}
+
+model Account {
+  id                Int       @id @default(autoincrement())
+  userId            Int
+  type              String
+  provider          Providers
+  ProviderAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  User User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, ProviderAccountId])
+  @@index([userId])
+  @@index([type])
 }
