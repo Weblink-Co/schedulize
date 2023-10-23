@@ -1,0 +1,16 @@
+version: '3'
+services:
+  devdb:
+    image: postgres # this uses the 'latest' version
+    container_name: schedulize_devdb
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: example # only do this in development
+      POSTGRES_DB: develop
+    volumes:
+      - .dev/psql:/var/lib/postgresql/data # save data between restarts
+    ports:
+      - 5555:5432 # binds port 5555 on your computer to the postgres port!
+
+volumes:
+  devdb:
