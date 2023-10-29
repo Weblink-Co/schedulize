@@ -1,5 +1,5 @@
 {
-  "name": "@schedulize/prisma",
+  "name": "@schedulize/database",
   "version": "0.0.0",
   "private": true,
   "main": "./index.ts",
@@ -9,7 +9,9 @@
     "db:push": "prisma db push --skip-generate"
   },
   "devDependencies": {
-    "prisma": "^5.4.2"
+    "@types/node": "^20.8.8",
+    "prisma": "^5.4.2",
+    "typescript": "^5.2.2"
   },
   "dependencies": {
     "@prisma/client": "5.4.2"
