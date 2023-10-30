@@ -22,7 +22,10 @@
     "lint": {},
     "dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "dependsOn": [
+        "^dev"
+      ]
     }
   }
 }
