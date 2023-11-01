@@ -1,1 +1,1 @@
-module.exports = require('../../packages/config/tailwind.config')
+module.exports = require('@schedulize/config/tailwind.config')
