@@ -1,11 +1,6 @@
 {
   "name": "@schedulize/config",
-  "version": "0.0.0.0",
+  "version": "0.0.0",
   "main": "index.js",
-  "files": [
-    ".eslintrc.js",
-    "eslint-preset.js",
-    "postcss.config.js",
-    "tailwind.config.js"
-  ]
+  "license": "MIT"
 }
