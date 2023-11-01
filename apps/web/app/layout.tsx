@@ -1,5 +1,4 @@
-import "ui/styles/globals.css";
-import "./globals.css";
+import "@schedulize/ui/styles/globals.css";
 import type { Metadata } from "next";
 
 
